@@ -1,0 +1,30 @@
+pkgname="video-compare-tool"
+pkgver=2020.06.24
+pkgrel=1
+pkgdesc="Un logiciel pour comparer les vidéos"
+url="https://seigneurfuo.com"
+arch=('any')
+license=('')
+conflicts=('MyAnimeManager2')
+groups=("★ seigneurfuo: Paquets persos")
+depends=("python" "python-pyqt5")
+source=("videcomparetool.desktop" "git+file:///home/seigneurfuo/Projets/VideoCompareTool/src#branch=master")
+md5sums=('ebf453c3c15fd530d7d26c9a67d2304d'
+         'SKIP')
+
+PKGDEST="$(pwd)/dist"
+
+pkgver() {
+    date +%Y.%m.%d
+}
+
+package() {
+	#mkdir -p "$pkgdir/opt"
+	#cp -R "$srcdir/MyAnimeManager2" "$pkgdir/opt"
+
+    # Supression des fichiers inutiles
+	#rm -f "$pkgdir/opt/$pkgname/README.md"
+	#rm -rf "$pkgdir/opt/$pkgname/.git"
+	
+	#install -Dm644 "videcomparetool.desktop" "${pkgdir}/usr/share/applications/videcomparetool.desktop"
+}
